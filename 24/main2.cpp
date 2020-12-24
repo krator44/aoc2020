@@ -294,7 +294,7 @@ void update_coord(int *x, int *y, dir_t dir) {
   }
 
   //printf("new coords x = %d y = %d\n", tx, ty);
-  if (tx < 0 || ty < 0 || tx >= TILES_WIDTH || tx >= TILES_HEIGHT) {
+  if (tx < 0 || ty < 0 || tx >= TILES_WIDTH || ty >= TILES_HEIGHT) {
     printf("ERROR out of bounds error in update_coord\n");
     exit(0);
   }
@@ -355,7 +355,7 @@ void flip_tile(unsigned char *tiles, int x, int y) {
 }
 
 unsigned char get_tile(unsigned char *tiles, int x, int y) {
-  if (x < 0 || y < 0 || x >= TILES_WIDTH || x >= TILES_HEIGHT) {
+  if (x < 0 || y < 0 || x >= TILES_WIDTH || y >= TILES_HEIGHT) {
     printf("ERROR in get_tile\n");
     exit(0);
   }
@@ -363,7 +363,7 @@ unsigned char get_tile(unsigned char *tiles, int x, int y) {
 }
 
 void set_tile(unsigned char *tiles, int x, int y, unsigned char n) {
-  if (x < 0 || y < 0 || x >= TILES_WIDTH || x >= TILES_HEIGHT) {
+  if (x < 0 || y < 0 || x >= TILES_WIDTH || y >= TILES_HEIGHT) {
     printf("ERROR in set_tile\n");
     exit(0);
   }
