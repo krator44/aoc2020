@@ -143,6 +143,7 @@ int main(int argc, char **argv) {
   free(tiles);
   free(tiles2);
   tiles = 0;
+  tiles2 = 0;
 
   return 0;
 }
