@@ -130,19 +130,19 @@
     for($i=0;$i<$n;$i++) {
       if($expr[$i] == "+" || $expr[$i] == "*") {
         if($state != 0) {
-	  die("ERROR in find_leftmost_expression\n");
-	}
+          die("ERROR in find_leftmost_expression\n");
+        }
         $state = 1;
       }
       else if($expr[$i] == " ") {
         if ($state == 1) {
-	  $state = 2;
-	}
-	else if ($state == 2) {
-	  $max = $i - 1;
-	  $state = 3;
-	  break;
-	}
+          $state = 2;
+        }
+        else if ($state == 2) {
+          $max = $i - 1;
+          $state = 3;
+          break;
+        }
       }
     }
     if ($state < 2) {
@@ -186,19 +186,19 @@
     for ($i=0;$i<$n;$i++) {
       if($expr[$i] == "(") {
         $left_bracket = $i;
-	continue;
+        continue;
       }
       else if ($expr[$i] == ")") {
         if ($left_bracket == -1) {
-	  die("ERROR: no matching '(' for ')' at $i\n");
-	}
-	else {
-	  $right_bracket = $i;
-	  $result = array();
-	  $result["min"] = $left_bracket+1;
-	  $result["max"] = $right_bracket-1;
-	  return $result;
-	}
+          die("ERROR: no matching '(' for ')' at $i\n");
+        }
+        else {
+          $right_bracket = $i;
+          $result = array();
+          $result["min"] = $left_bracket+1;
+          $result["max"] = $right_bracket-1;
+          return $result;
+        }
       }
     }
     die("ERROR: left_bracket = $left_bracket, "

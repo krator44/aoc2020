@@ -85,9 +85,9 @@
       $ss = substr($message,$i*8,8);
       if(in_array($ss, $strings_42)) {
         if($count_31 != 0) {
-	  return false;
-	}
-	$count_42++;
+          return false;
+        }
+        $count_42++;
       }
       else if (in_array($ss, $strings_31)) {
         $count_31++;
@@ -134,11 +134,11 @@
       //printn($expansions_r);
       foreach($expansions_r as $expansion_s) {
         $ss = trim($expansion_s);
-	$expansion_r = explode(" ", $ss);
-	foreach($expansion_r as $index2 => $symbol2) {
-	  $expansion_r[$index2] = trim($symbol2, "\"");
-	}
-	$rule[] = $expansion_r;
+        $expansion_r = explode(" ", $ss);
+        foreach($expansion_r as $index2 => $symbol2) {
+          $expansion_r[$index2] = trim($symbol2, "\"");
+        }
+        $rule[] = $expansion_r;
       }
       $rules[$index] = $rule;
     }
@@ -185,8 +185,8 @@
       foreach($head_rule as $index => $expansion) {
         $tt = generate_strings_rec($expansion);
         //print "head_strings count tt ".count($tt);
-	//print "head $head generated ".count($tt)." strings on exp $index\n";
-	$head_strings = array_mergen($head_strings, $tt);
+        //print "head $head generated ".count($tt)." strings on exp $index\n";
+        $head_strings = array_mergen($head_strings, $tt);
       }
     }
     //print "end expr merge ". count($head_strings);
@@ -201,7 +201,7 @@
     foreach($head_strings as $head_string) {
       foreach($tail_strings as $tail_string) {
         $ss2 = $head_string . $tail_string;
-	$strings[] = $ss2;
+        $strings[] = $ss2;
       }
     }
     return $strings;

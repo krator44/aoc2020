@@ -29,13 +29,13 @@
     $total = 0;
     foreach($nearby as $nearby_ticket) {
       foreach($nearby_ticket as $field) {
-	//print("$field");
-	if(!is_valid($field)) {
-	  //print(" INVALID");
-	  $error_count++;
-	  $total += $field;
-	}
-	//print("\n");
+        //print("$field");
+        if(!is_valid($field)) {
+          //print(" INVALID");
+          $error_count++;
+          $total += $field;
+        }
+        //print("\n");
       }
     }
     $result = array();
@@ -50,10 +50,10 @@
       for($i = 0; $i < 2; $i++) {
         $min = $rule[$i]["min"];
         $max = $rule[$i]["max"];
-	//printn("$min - $max: $number");
-	if ($min <= $number && $max >= $number) {
-	  return true;
-	}
+        //printn("$min - $max: $number");
+        if ($min <= $number && $max >= $number) {
+          return true;
+        }
       }
     }
     return false;

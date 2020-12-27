@@ -122,12 +122,12 @@
       for ($r = 1; $r < 9; $r++) {
         $fss = "";
         for ($x = 0; $x < $width; $x++) {
-	  $ss = $final[$y][$x]["datap"][$r];
-	  $ss = substr($ss,1,8);
-	  $fss .= $ss;
+          $ss = $final[$y][$x]["datap"][$r];
+          $ss = substr($ss,1,8);
+          $fss .= $ss;
         }
-	$fss .= "\n";
-	$picture[] = $fss;
+        $fss .= "\n";
+        $picture[] = $fss;
       }
     }
   }
@@ -138,10 +138,10 @@
     for ($y = 0; $y < $height; $y++) {
       for ($r = 0; $r < 10; $r++) {
         for ($x = 0; $x < $height; $x++) {
-	  print $final[$y][$x]["datap"][$r];
-	  print " ";
+          print $final[$y][$x]["datap"][$r];
+          print " ";
         }
-	print "\n";
+        print "\n";
       }
       print "\n";
     }
@@ -156,14 +156,14 @@
         $key = $stitch[$y][$x]["key"];
         $transform = $stitch[$y][$x]["transform"];
         $adj = $adjacency[$key];   
-	$adjp = apply_transform($adj, $transform);
+        $adjp = apply_transform($adj, $transform);
         $final[$y][$x]["key"] = $key;
         $final[$y][$x]["transform"] = $transform;   
         $final[$y][$x]["adj"] = $adj;   
         $final[$y][$x]["adjp"] = $adjp;   
         $final[$y][$x]["data"] = $pieces[$key];
         $final[$y][$x]["datap"] = apply_data_transform($pieces[$key],
-	  $transform);
+          $transform);
       }
     }
   }
@@ -212,14 +212,14 @@
     //for($y = 0;$y < 1; $y++) {
       for($x = 0; $x < $width; $x++) {
         if ($x == 0 && $y == 0) {
-	  continue;
-	}
-	//print "XXXXXXXXXXX\n";
-	//print "PLACING $x $y\n";
-	//print "XXXXXXXXXXX\n";
-	//print_r($stitch, false);
-	//print "XXXXXXXXXXX\n";
-	//print "XXXXXXXXXXX\n";
+          continue;
+        }
+        //print "XXXXXXXXXXX\n";
+        //print "PLACING $x $y\n";
+        //print "XXXXXXXXXXX\n";
+        //print_r($stitch, false);
+        //print "XXXXXXXXXXX\n";
+        //print "XXXXXXXXXXX\n";
         fill_stitch($x, $y);
       }
     }
@@ -328,11 +328,11 @@
       $adj[3] = $tt;
       for ($i=0; $i<4; $i++) {
         if ($adj[$i]["flip"] == 1) {
-	  $adj[$i]["flip"] = 0;
-	}
+          $adj[$i]["flip"] = 0;
+        }
         else {
-	  $adj[$i]["flip"] = 1;
-	}
+          $adj[$i]["flip"] = 1;
+        }
       }
     }
     for($i = 0; $i < $dir; $i++) {
@@ -398,7 +398,7 @@
       }
       else if($val == 2) {
         //print("key $key\n");
-	$corners[] = $key;
+        $corners[] = $key;
       }
     }
   }
@@ -409,14 +409,14 @@
       $adj_edg = array();
       for($i=0;$i<4;$i++) {
         $n = find_match($key, $i);
-	$check = count_matches($key, $i);
-	if ($check > 1) {
-	  print "ERROR $key $i has multiple matches\n";
+        $check = count_matches($key, $i);
+        if ($check > 1) {
+          print "ERROR $key $i has multiple matches\n";
           $ss = $edges[$key][$index];
-	  print "[$ss]";
-	  die();
-	}
-	$adj_edg[$i] = $n;
+          print "[$ss]";
+          die();
+        }
+        $adj_edg[$i] = $n;
       }
       $adjacency[$key] = $adj_edg;
     }
@@ -432,17 +432,17 @@
       }
       for($i=0;$i<4;$i++) {
         $ss2 = $edge2[$i];
-	$ss2r = strrev($ss2);
-	if ($ss2r == $ss) {
-	  $ret["key"] = $key2;
-	  $ret["flip"] = 0;
-	  return $ret;
-	}
-	else if ($ss2 == $ss) {
-	  $ret["key"] = $key2;
-	  $ret["flip"] = 1;
-	  return $ret;
-	}
+        $ss2r = strrev($ss2);
+        if ($ss2r == $ss) {
+          $ret["key"] = $key2;
+          $ret["flip"] = 0;
+          return $ret;
+        }
+        else if ($ss2 == $ss) {
+          $ret["key"] = $key2;
+          $ret["flip"] = 1;
+          return $ret;
+        }
       }
     }
     $ret["key"] = 0;
@@ -456,9 +456,9 @@
       $tt = 0;
       for($i=0;$i<4;$i++) {
         $n = count_matches($key, $i);
-	if($n == 0) {
-	  $tt++;
-	}
+        if($n == 0) {
+          $tt++;
+        }
       }
       $unique[$key] = $tt;
     }
@@ -474,10 +474,10 @@
       }
       for($i=0;$i<4;$i++) {
         $ss2 = $edge2[$i];
-	$ss2r = strrev($ss2);
-	if ($ss2r == $ss || $ss2 == $ss) {
-	  $num_matches++;
-	}
+        $ss2r = strrev($ss2);
+        if ($ss2r == $ss || $ss2 == $ss) {
+          $num_matches++;
+        }
       }
     }
     return $num_matches;

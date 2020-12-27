@@ -118,14 +118,14 @@
       $state_changed = false;
       foreach($candidate as $argn => $ingrs) {
         if (count($ingrs) == 0) {
-	  die("ERROR\n");
-	}
-	else if (count($ingrs) == 1) {
-	  $changes = remove_candidate($ingrs[0], $argn);
-	  if ($changes) {
-	    $state_changed = true;
-	  }
-	}
+          die("ERROR\n");
+        }
+        else if (count($ingrs) == 1) {
+          $changes = remove_candidate($ingrs[0], $argn);
+          if ($changes) {
+            $state_changed = true;
+          }
+        }
       }
       if (!$state_changed) {
         break;

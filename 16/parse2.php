@@ -82,9 +82,9 @@
         }
         else if (count($rules) == 1) {
           $xx = remove_candidate($rules[0], $column);
-	  if ($xx) {
-	    $state_changed = true;
-	  }
+          if ($xx) {
+            $state_changed = true;
+          }
         }
       }
       if(!$state_changed) {
@@ -102,9 +102,9 @@
       }
       if (in_array($rule_index, $candidate[$col])) {
         $rr = array_diff($candidate[$col], array($rule_index));
-	$rr = array_values($rr);
+        $rr = array_values($rr);
         $candidate[$col] = $rr;
-	$changes = true;
+        $changes = true;
       }
     }
     return $changes;
@@ -119,8 +119,8 @@
       $candidate[$i] = array();
       foreach($rules as $key => $rule) {
         if(is_valid_for_column($i, $key)) {
-	  $candidate[$i][] = $key;
-	}
+          $candidate[$i][] = $key;
+        }
       }
     }
   }
@@ -133,23 +133,23 @@
       for($i=0;$i<$num_rules;$i++) {
         $matches = true;
         foreach($nearby as $ticket) {
-	  printn ("is valid ${ticket[$i]} for rule $key");
+          printn ("is valid ${ticket[$i]} for rule $key");
           if (!is_valid_for_rule($ticket[$i], $key)) {
-	    printn("${ticket[$i]} not valid for rule $key");
-	    $matches = false;
-	    break;
-	  }
+            printn("${ticket[$i]} not valid for rule $key");
+            $matches = false;
+            break;
+          }
         }
-	if ($matches) {
+        if ($matches) {
           printn ("FOUND");
-	  printn ("column $i matches rule $key");
-	  if(isset($rule["index"])) {
-	    $index2 = $rule["index"];
-	    printn("columns $i and $index2 both match rule $key");
-	    die("ERROR\n");
-	  }
-	  $rule["index"] = $i;
-	}
+          printn ("column $i matches rule $key");
+          if(isset($rule["index"])) {
+            $index2 = $rule["index"];
+            printn("columns $i and $index2 both match rule $key");
+            die("ERROR\n");
+          }
+          $rule["index"] = $i;
+        }
       }
     }
   }
@@ -161,9 +161,9 @@
     $total = 0;
     foreach($nearby as $index => $nearby_ticket) {
       foreach($nearby_ticket as $field) {
-	if(!is_valid($field)) {
-	  unset($nearby[$index]);
-	}
+        if(!is_valid($field)) {
+          unset($nearby[$index]);
+        }
       }
     }
     $nearby = array_values($nearby);
@@ -175,13 +175,13 @@
     $total = 0;
     foreach($nearby as $nearby_ticket) {
       foreach($nearby_ticket as $field) {
-	//print("$field");
-	if(!is_valid($field)) {
-	  //print(" INVALID");
-	  $error_count++;
-	  $total += $field;
-	}
-	//print("\n");
+        //print("$field");
+        if(!is_valid($field)) {
+          //print(" INVALID");
+          $error_count++;
+          $total += $field;
+        }
+        //print("\n");
       }
     }
     $result = array();

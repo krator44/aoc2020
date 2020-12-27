@@ -57,7 +57,7 @@
     for ($y = 0; $y < $height; $y++) {
       for ($x = 0; $x < $width; $x++) {
         $s = seat_get($x, $y);
-	print $s;
+        print $s;
       }
       print "\n";
     }
@@ -69,7 +69,7 @@
     for ($y = 0; $y < $height; $y++) {
       for ($x = 0; $x < $width; $x++) {
         $s = count_occupied($x, $y);
-	print $s;
+        print $s;
       }
       print "\n";
     }
@@ -82,9 +82,9 @@
     for ($y = 0; $y < $height; $y++) {
       for ($x = 0; $x < $width; $x++) {
         $s = seat_get($x, $y);
-	if ($s == "#") {
-	  $total++;
-	}
+        if ($s == "#") {
+          $total++;
+        }
       }
     }
     return $total;

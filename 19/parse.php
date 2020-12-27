@@ -57,11 +57,11 @@
       //printn($expansions_r);
       foreach($expansions_r as $expansion_s) {
         $ss = trim($expansion_s);
-	$expansion_r = explode(" ", $ss);
-	foreach($expansion_r as $index2 => $symbol2) {
-	  $expansion_r[$index2] = trim($symbol2, "\"");
-	}
-	$rule[] = $expansion_r;
+        $expansion_r = explode(" ", $ss);
+        foreach($expansion_r as $index2 => $symbol2) {
+          $expansion_r[$index2] = trim($symbol2, "\"");
+        }
+        $rule[] = $expansion_r;
       }
       $rules[$index] = $rule;
     }
@@ -103,7 +103,7 @@
       $head_rule = $rules[$head];
       foreach($head_rule as $expansion) {
         $tt = generate_strings_rec($expansion);
-	$head_strings = array_merge($head_strings, $tt);
+        $head_strings = array_merge($head_strings, $tt);
       }
     }
     
@@ -117,7 +117,7 @@
     foreach($head_strings as $head_string) {
       foreach($tail_strings as $tail_string) {
         $ss2 = $head_string . $tail_string;
-	$strings[] = $ss2;
+        $strings[] = $ss2;
       }
     }
     return $strings;

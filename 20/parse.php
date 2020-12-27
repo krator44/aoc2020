@@ -55,9 +55,9 @@
       $tt = 0;
       for($i=0;$i<4;$i++) {
         $n = count_matches($key, $i);
-	if($n == 0) {
-	  $tt++;
-	}
+        if($n == 0) {
+          $tt++;
+        }
       }
       $unique[$key] = $tt;
     }
@@ -73,10 +73,10 @@
       }
       for($i=0;$i<4;$i++) {
         $ss2 = $edge2[$i];
-	$ss2r = strrev($ss2);
-	if ($ss2r == $ss || $ss2 == $ss) {
-	  $num_matches++;
-	}
+        $ss2r = strrev($ss2);
+        if ($ss2r == $ss || $ss2 == $ss) {
+          $num_matches++;
+        }
       }
     }
     return $num_matches;
