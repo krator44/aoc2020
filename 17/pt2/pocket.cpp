@@ -35,6 +35,7 @@ Grid::Grid(const Grid &tt) {
 Grid& Grid::operator= (const Grid &tt){
   if(data != 0) {
     delete[] data;
+    data = 0;
   }
   max_x = tt.max_x;
   max_y = tt.max_y;
